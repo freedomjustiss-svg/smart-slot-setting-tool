@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="スマスロ設定推測ツール">
+  <rect width="512" height="512" rx="96" fill="#12110f"/>
+  <path d="M92 348c36-98 82-147 136-147 34 0 56 18 78 36 17 14 34 28 58 28 23 0 43-12 60-36" fill="none" stroke="#edb84a" stroke-width="38" stroke-linecap="round"/>
+  <path d="M124 368h264c24 0 44-20 44-44V156c0-24-20-44-44-44H124c-24 0-44 20-44 44v168c0 24 20 44 44 44Z" fill="none" stroke="#f7fafc" stroke-width="24"/>
+  <path d="M150 172h84M150 224h54M150 276h116" stroke="#c0b8ac" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="352" cy="214" r="54" fill="#e54d55"/>
+  <path d="M332 214l19 20 39-50" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="スマスロ推測" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#12110f" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>スマスロ設定推測ツール</title>
+    <style>
+      :root{color-scheme:dark;--bg:#12110f;--panel:#1d1b18;--line:#40372f;--text:#f7fafc;--muted:#c0b8ac;--gold:#edb84a;--red:#b94545;--green:#42d68f}
+      *{box-sizing:border-box} body{margin:0;min-height:100dvh;background:linear-gradient(180deg,#12110f,#0c0b0a);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+      button,input,select,textarea{font:inherit;font-size:16px} .page{width:min(100%,760px);margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) 16px calc(44px + env(safe-area-inset-bottom))}
+      .eyebrow{margin:0 0 8px;color:var(--gold);font-size:.78rem;font-weight:800}.muted{color:var(--muted);line-height:1.65} h1{margin:0 0 10px;font-size:2.3rem;line-height:1.1} h2{margin:0;font-size:1.35rem}
+      .card,.panel{border:1px solid var(--line);border-radius:8px;background:var(--panel)}.machine-card{display:flex;justify-content:space-between;align-items:center;min-height:112px;padding:18px;margin:28px 0 12px;text-decoration:none;color:inherit}.machine-card strong{display:block;margin-top:8px;font-size:1.8rem}.go{display:grid;place-items:center;width:54px;height:54px;border-radius:8px;background:#3a2224;font-size:2.6rem}
+      .install{display:block;margin:14px 0 20px;padding:16px;border:1px solid #356f52;border-radius:8px;background:#173429;color:#d9ffe9;text-align:center;font-weight:900;text-decoration:none}.notice{padding:16px;border:1px solid #6b5523;border-radius:8px;background:#272015;color:#ffe8a6;line-height:1.7}
+      .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-weight:800;text-decoration:none}.panel{padding:16px;margin-top:18px}.head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.reset{width:48px;height:48px;border:1px solid #5d3438;border-radius:8px;background:#3a2224;color:#fff}
+      label{display:grid;gap:7px;margin-top:13px;color:var(--muted);font-weight:800}.field{position:relative}input,select,textarea{width:100%;min-height:54px;border:1px solid var(--line);border-radius:8px;background:#12100e;color:var(--text);padding:0 14px;outline:none}textarea{padding:14px;line-height:1.5}.unit{position:absolute;right:14px;bottom:15px;color:var(--muted)}
+      .save{margin-top:14px;color:var(--muted);font-size:.86rem}.hero{margin-top:18px;padding:18px 16px;border-radius:8px;background:var(--red)}.hero h2{margin:10px 0 12px;font-size:2rem}.decision{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:8px;background:#0e6039;font-weight:900}
+      .signal{margin-top:14px;padding:16px;border:1px solid #356f52;border-radius:8px;background:#173429;color:#d9ffe9}.signal strong{display:block;margin-bottom:6px;color:var(--green);font-size:1.25rem}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{padding:8px 10px;border-radius:8px;background:#28241f;color:var(--muted);font-weight:800;font-size:.85rem}
+      .bar{margin:14px 0}.bar-top{display:flex;justify-content:space-between;margin-bottom:6px;color:var(--muted)}.track{height:12px;border-radius:8px;background:#0c0b0a;overflow:hidden}.fill{height:100%;border-radius:8px;background:#728198}.fill.high{background:var(--green)}
+      .high{margin-top:18px;padding:16px;border:1px solid var(--green);border-radius:8px;background:#22362a}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metrics span{display:block;color:var(--muted);font-size:.78rem;font-weight:800}.metrics strong{font-size:1.25rem}.reasons li{margin:8px 0;color:var(--muted);line-height:1.55}
+      .hidden{display:none}
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section id="home">
+        <p class="eyebrow">Smart Slot Estimator</p>
+        <h1>スマスロ設定推測ツール</h1>
+        <p class="muted">実戦中に片手で入力しやすい、期待度ベースの設定推測補助アプリです。</p>
+        <a class="machine-card card" href="#machine"><span><span class="eyebrow">対応機種</span><strong>戦国乙女5</strong><span class="muted">スマスロ 戦国乙女5</span></span><span class="go">›</span></a>
+        <a class="install" href="#install">iPhoneのホーム画面に追加する</a>
+        <p class="notice">このツールは設定を断定するものではありません。公開解析値、実戦値、入力データをもとに期待度を表示する補助ツールです。実際の遊技判断は自己責任で行ってください。</p>
+      </section>
+      <section id="machine" class="hidden">
+        <a class="back" href="#home">← 機種一覧</a>
+        <p class="eyebrow">Machine</p><h1>戦国乙女5</h1><p class="muted">スマスロ 戦国乙女5の設定推測ページ</p>
+        <section class="panel">
+          <div class="head"><div><p class="eyebrow">入力フォーム</p><h2>実戦データ</h2></div><button class="reset" id="reset">↻</button></div>
+          <label>通常ゲーム数<div class="field"><input id="normalGames" inputmode="numeric" type="number" min="0"><span class="unit">G</span></div></label>
+          <label>AT初当たり回数<div class="field"><input id="atInitialCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>CZ回数<div class="field"><input id="czCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>AT直撃回数<div class="field"><input id="directAtCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>ボーナス終了画面スタンプ<select id="stamp"><option value="none">なし</option><option value="ka">可: 設定2以上濃厚</option><option value="kichi">吉: 設定3以上濃厚</option><option value="ryo">良: 設定4以上濃厚</option><option value="yu">優: 設定5以上濃厚</option><option value="kiwami">極: 設定6濃厚</option></select></label>
+          <label>高設定示唆弱の回数<div class="field"><input id="weakSignalCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>高設定示唆強の回数<div class="field"><input id="strongSignalCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>現在差枚<div class="field"><input id="currentMedals" inputmode="numeric" type="number"><span class="unit">枚</span></div></label>
+          <label>投資枚数<div class="field"><input id="investmentMedals" inputmode="numeric" type="number" min="0"><span class="unit">枚</span></div></label>
+          <label>回収枚数<div class="field"><input id="recoveryMedals" inputmode="numeric" type="number" min="0"><span class="unit">枚</span></div></label>
+          <label>メモ欄<textarea id="memo" rows="3" placeholder="終了画面、挙動、隣台状況など"></textarea></label>
+          <div class="save">入力内容は端末に自動保存されます</div>
+        </section>
+        <section id="result"></section>
+      </section>
+      <section id="install" class="hidden">
+        <a class="back" href="#home">← トップへ</a><p class="eyebrow">iPhone</p><h1>ホーム画面に追加</h1>
+        <div class="panel"><h2>1. Safariで開く</h2><p class="muted">このURLをiPhoneのSafariで開きます。</p></div>
+        <div class="panel"><h2>2. 共有を押す</h2><p class="muted">画面下の共有ボタンを押します。</p></div>
+        <div class="panel"><h2>3. ホーム画面に追加</h2><p class="muted">「追加」を押すとホーム画面に入ります。</p></div>
+      </section>
+    </main>
+    <script>
+      const ids=["normalGames","atInitialCount","czCount","directAtCount","stamp","weakSignalCount","strongSignalCount","currentMedals","investmentMedals","recoveryMedals","memo"];
+      const settings=[390,375,355,325,300,280], cz=[1,1.05,1.12,1.25,1.38,1.55], direct=[.05,.07,.1,.18,.28,.4];
+      const n=(id)=>Number(document.getElementById(id).value||0), pct=(v)=>Math.round(v*10)/10;
+      function show(id){["home","machine","install"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));}
+      function save(){const d={};ids.forEach(id=>d[id]=document.getElementById(id).value);localStorage.setItem("slot-iphone",JSON.stringify(d));calc();}
+      function restore(){const d=JSON.parse(localStorage.getItem("slot-iphone")||"{}");ids.forEach(id=>{document.getElementById(id).value=d[id]||""});calc();}
+      function calc(){
+        const g=n("normalGames"), at=n("atInitialCount"), c=n("czCount"), dh=n("directAtCount"), weak=n("weakSignalCount"), strong=n("strongSignalCount"), medals=n("currentMedals"), stamp=document.getElementById("stamp").value;
+        let scores=[1,2,3,4,5,6].map((s,i)=>10+(at&&g?Math.max(-3.2,Math.min(5.1,(at/(g/settings[i])-1)*3.2)):0)+(g?Math.max(-1.2,Math.min(2,c/Math.max(g/1000*cz[i],.01)-1))*1.2:0)+(g?Math.max(-2.5,Math.min(4.2,dh/Math.max(g/1000*direct[i],.01)-1))*2.5:0)+weak*(.1+i*.12)+strong*(.15+i*.24)+(medals/2000)*((s-3.5)/2.5));
+        const rules={ka:2,kichi:3,ryo:4,yu:5,kiwami:6}; if(stamp==="kiwami") scores=[0,0,0,0,0,100]; else if(rules[stamp]) scores=scores.map((v,i)=>i+1<rules[stamp]?0:v+8+i*.5);
+        const total=scores.reduce((a,b)=>a+Math.max(0,b),0)||100, ps=scores.map(v=>pct(Math.max(0,v)/total*100)); ps[5]=pct(ps[5]+(100-ps.reduce((a,b)=>a+b,0)));
+        const best=ps.indexOf(Math.max(...ps))+1, over4=pct(ps[3]+ps[4]+ps[5]), over5=pct(ps[4]+ps[5]), ref=g<1000?"低":g<3000?"中":"高";
+        const decision=stamp==="kiwami"||over4>=55?"続行推奨":over4>=35?"様子見":"ヤメ検討";
+        const label={ka:"可",kichi:"吉",ryo:"良",yu:"優",kiwami:"極"}[stamp], min=rules[stamp];
+        document.getElementById("result").innerHTML=`<div class="hero"><p><b>設定推測結果</b></p><h2>最有力: 設定${best}</h2><span class="decision">${decision}</span></div>${label?`<div class="signal"><strong>${label}</strong><span>${stamp==="kiwami"?"設定6期待度を100%にしています。":`設定1から${min-1}の期待度を0%にしています。`}</span></div>`:""}<div class="chips"><span class="chip">参考度: ${ref}</span><span class="chip">期待度表示</span></div>${ps.map((p,i)=>`<div class="bar"><div class="bar-top"><span>設定${i+1}</span><b>${p.toFixed(1)}%</b></div><div class="track"><div class="fill ${i>=3?"high":""}" style="width:${p}%"></div></div></div>`).join("")}<div class="high"><h2>高設定期待度</h2><div class="metrics"><div><span>設定4以上</span><strong>${over4.toFixed(1)}%</strong></div><div><span>設定5以上</span><strong>${over5.toFixed(1)}%</strong></div><div><span>設定6</span><strong>${ps[5].toFixed(1)}%</strong></div></div></div><ul class="reasons"><li>${g<1000?"通常ゲーム数が少ないため参考度は低です。":"通常ゲーム数に応じて参考度を判定しています。"}</li><li>初当たり、CZ、直撃、示唆、差枚を総合評価しています。</li></ul>`;
+      }
+      window.addEventListener("hashchange",()=>show(location.hash.replace("#","")||"home")); ids.forEach(id=>document.getElementById(id).addEventListener("input",save)); document.getElementById("reset").onclick=()=>{localStorage.removeItem("slot-iphone");ids.forEach(id=>document.getElementById(id).value="");calc();}; restore(); show(location.hash.replace("#","")||"home");
+    </script>
+  </body>
+</html>
