@@ -12,9 +12,9 @@
     <title>スマスロ設定推測ツール</title>
     <style>
       :root{color-scheme:dark;--bg:#12110f;--panel:#1d1b18;--line:#40372f;--text:#f7fafc;--muted:#c0b8ac;--gold:#edb84a;--red:#b94545;--green:#42d68f}
-      *{box-sizing:border-box} body{margin:0;min-height:100dvh;background:linear-gradient(180deg,#12110f,#0c0b0a);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
-      button,input,select,textarea{font:inherit;font-size:16px} .page{width:min(100%,760px);margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) 16px calc(44px + env(safe-area-inset-bottom))}
-      .eyebrow{margin:0 0 8px;color:var(--gold);font-size:.78rem;font-weight:800}.muted{color:var(--muted);line-height:1.65} h1{margin:0 0 10px;font-size:2.3rem;line-height:1.1} h2{margin:0;font-size:1.35rem}
+      *{box-sizing:border-box}body{margin:0;min-height:100dvh;background:linear-gradient(180deg,#12110f,#0c0b0a);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+      button,input,select,textarea{font:inherit;font-size:16px}.page{width:min(100%,760px);margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) 16px calc(44px + env(safe-area-inset-bottom))}
+      .eyebrow{margin:0 0 8px;color:var(--gold);font-size:.78rem;font-weight:800}.muted{color:var(--muted);line-height:1.65}h1{margin:0 0 10px;font-size:2.3rem;line-height:1.1}h2{margin:0;font-size:1.35rem}
       .card,.panel{border:1px solid var(--line);border-radius:8px;background:var(--panel)}.machine-card{display:flex;justify-content:space-between;align-items:center;min-height:112px;padding:18px;margin:28px 0 12px;text-decoration:none;color:inherit}.machine-card strong{display:block;margin-top:8px;font-size:1.8rem}.go{display:grid;place-items:center;width:54px;height:54px;border-radius:8px;background:#3a2224;font-size:2.6rem}
       .install{display:block;margin:14px 0 20px;padding:16px;border:1px solid #356f52;border-radius:8px;background:#173429;color:#d9ffe9;text-align:center;font-weight:900;text-decoration:none}.notice{padding:16px;border:1px solid #6b5523;border-radius:8px;background:#272015;color:#ffe8a6;line-height:1.7}
       .back{display:inline-block;margin-bottom:28px;color:var(--muted);font-weight:800;text-decoration:none}.panel{padding:16px;margin-top:18px}.head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.reset{width:48px;height:48px;border:1px solid #5d3438;border-radius:8px;background:#3a2224;color:#fff}
@@ -23,7 +23,7 @@
       .signal{margin-top:14px;padding:16px;border:1px solid #356f52;border-radius:8px;background:#173429;color:#d9ffe9}.signal strong{display:block;margin-bottom:6px;color:var(--green);font-size:1.25rem}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{padding:8px 10px;border-radius:8px;background:#28241f;color:var(--muted);font-weight:800;font-size:.85rem}
       .bar{margin:14px 0}.bar-top{display:flex;justify-content:space-between;margin-bottom:6px;color:var(--muted)}.track{height:12px;border-radius:8px;background:#0c0b0a;overflow:hidden}.fill{height:100%;border-radius:8px;background:#728198}.fill.hot{background:var(--green)}
       .highbox{margin-top:18px;padding:16px;border:1px solid var(--green);border-radius:8px;background:#22362a}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metrics span{display:block;color:var(--muted);font-size:.78rem;font-weight:800}.metrics strong{font-size:1.25rem}.reasons li{margin:8px 0;color:var(--muted);line-height:1.55}
-      .hidden{display:none}
+      .sources h2{margin-bottom:10px}.sources ul{margin:10px 0 0;padding-left:20px}.sources li{margin:8px 0;color:var(--muted);line-height:1.55}.sources a{color:#9fd8ff;font-weight:800}.hidden{display:none}
     </style>
   </head>
   <body>
@@ -31,35 +31,50 @@
       <section id="home">
         <p class="eyebrow">Smart Slot Estimator</p>
         <h1>スマスロ設定推測ツール</h1>
-        <p class="muted">実戦中に片手で入力しやすい、期待度ベースの設定推測補助アプリです。</p>
+        <p class="muted">ホールで片手入力しやすい、期待度ベースの設定推測補助アプリです。</p>
         <a class="machine-card card" href="#machine"><span><span class="eyebrow">対応機種</span><strong>戦国乙女5</strong><span class="muted">スマスロ 戦国乙女5</span></span><span class="go">›</span></a>
         <a class="install" href="#install">iPhoneのホーム画面に追加する</a>
         <p class="notice">このツールは設定を断定するものではありません。公開解析値、実戦値、入力データをもとに期待度を表示する補助ツールです。実際の遊技判断は自己責任で行ってください。</p>
       </section>
       <section id="machine" class="hidden">
         <a class="back" href="#home">← 機種一覧</a>
-        <p class="eyebrow">Machine</p><h1>戦国乙女5</h1><p class="muted">スマスロ 戦国乙女5の設定推測ページ</p>
+        <p class="eyebrow">Machine</p>
+        <h1>戦国乙女5</h1>
+        <p class="muted">スマスロ 戦国乙女5の設定推測ページ</p>
         <section class="panel">
           <div class="head"><div><p class="eyebrow">入力フォーム</p><h2>実戦データ</h2></div><button class="reset" id="reset">↻</button></div>
           <label>通常ゲーム数<div class="field"><input id="normalGames" inputmode="numeric" type="number" min="0"><span class="unit">G</span></div></label>
           <label>AT初当たり回数<div class="field"><input id="atInitialCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
-          <label>CZ回数<div class="field"><input id="czCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
-          <label>AT直撃回数<div class="field"><input id="directAtCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>CZ回数（参考・主スコア外）<div class="field"><input id="czCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>AT直撃回数（参考・主スコア外）<div class="field"><input id="directAtCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
           <label>戦国乙女ボーナス直撃回数<div class="field"><input id="bonusDirectCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
-          <label>乙女アタック回数<div class="field"><input id="otomeAttackCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
-          <label>乙女アタック当選回数<div class="field"><input id="otomeAttackWinCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>巫女ポイント0pt到達回数（カンスケ非滞在）<div class="field"><input id="otomeAttackCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
+          <label>乙女アタック当選回数（同条件）<div class="field"><input id="otomeAttackWinCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
           <label>ボーナス終了画面スタンプ<select id="stamp"><option value="none">なし</option><option value="ka">可: 設定2以上濃厚</option><option value="kichi">吉: 設定3以上濃厚</option><option value="ryo">良: 設定4以上濃厚</option><option value="yu">優: 設定5以上濃厚</option><option value="kiwami">極: 設定6濃厚</option></select></label>
           <label>AT中の獲得枚数表示<select id="medalOver"><option value="none">なし</option><option value="over222">222枚 OVER: 設定2以上濃厚</option><option value="over333">333枚 OVER: 設定3以上濃厚</option><option value="over444">444枚 OVER: 設定4以上濃厚</option><option value="over555">555枚 OVER: 設定5以上濃厚</option><option value="over666">666枚 OVER: 設定6濃厚</option></select></label>
+          <label>AT終了画面（設定示唆）<select id="atEndScreen"><option value="none">なし / その他</option><option value="otomeGroupB">乙女集合B: 設定2以上濃厚</option><option value="fourGirlsTableA">乙女4人＋テーブルA確認: 設定4以上濃厚</option><option value="otomeGroupAHeavenDenied">乙女集合A＋天国否定: 設定4以上濃厚</option></select></label>
           <label>隠れ凪セリフ（参考）<select id="hiddenNagiSpeech"><option value="none">なし / デフォルト</option><option value="nagi2">一味違いますね: 設定2以上示唆</option><option value="nagi3">何やら不思議な気配です: 設定3以上示唆</option><option value="nagi4">良い予感がします: 設定4以上示唆</option><option value="nagi5">遊び尽くしちゃいましょう: 設定5以上示唆</option><option value="nagi6">お肉〜お肉〜: 設定6示唆</option></select></label>
+          <label>ハルルナPUSH（参考）<select id="harurunaPush"><option value="none">なし</option><option value="seen">出現あり: 設定4以上濃厚（推測）</option></select></label>
           <label>高設定示唆弱の回数<div class="field"><input id="weakSignalCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
           <label>高設定示唆強の回数<div class="field"><input id="strongSignalCount" inputmode="numeric" type="number" min="0"><span class="unit">回</span></div></label>
           <label>現在差枚<div class="field"><input id="currentMedals" inputmode="numeric" type="number"><span class="unit">枚</span></div></label>
           <label>投資枚数<div class="field"><input id="investmentMedals" inputmode="numeric" type="number" min="0"><span class="unit">枚</span></div></label>
           <label>回収枚数<div class="field"><input id="recoveryMedals" inputmode="numeric" type="number" min="0"><span class="unit">枚</span></div></label>
-          <label>メモ欄<textarea id="memo" rows="3" placeholder="終了画面、挙動、隣台状況など"></textarea></label>
+          <label>メモ欄<textarea id="memo" rows="3" placeholder="終了画面、カンスケ滞在、リールロック2段階、周期、店状況など"></textarea></label>
           <div class="save">入力内容は端末に自動保存されます</div>
         </section>
         <section id="result"></section>
+        <section class="panel sources">
+          <h2>解析情報・引用元</h2>
+          <p class="muted">最終確認: 2026年7月2日。公開解析値、添付レポート、実戦入力をもとに期待度を表示します。</p>
+          <ul>
+            <li>添付レポート「スマスロ戦国乙女5の設定差と設定推測要素の深掘りレポート」を反映。主軸はAT初当たり、戦国乙女ボーナス直撃、巫女ポイント0pt到達時の乙女アタック、確定/濃厚示唆です。</li>
+            <li>AT初当たり、戦国乙女ボーナス直撃、乙女アタック当選率は、設定1を基準にした簡易LLR（対数尤度比）寄りのスコアで評価しています。</li>
+            <li><a href="https://p-town.dmm.com/machines/5009" target="_blank" rel="noreferrer">DMMぱちタウン「L戦国乙女5 業火を穿つ宿焔の双刃」</a>を参照。機種情報、設定判別、終了画面、ボーナス/CZ関連を確認。</li>
+            <li><a href="https://nana-press.com/kaiseki/machine/1160/" target="_blank" rel="noreferrer">ななプレス「戦国乙女5 解析情報まとめ」</a>、<a href="https://1geki.jp/slot/l_otome5/0/" target="_blank" rel="noreferrer">一撃「L戦国乙女5」</a>、<a href="https://chonborista.com/slot/orinpia-slot/256147/" target="_blank" rel="noreferrer">ちょんぼりすた</a>で設定差を照合。</li>
+            <li>CZ回数・AT直撃回数・隠れ凪セリフ・ハルルナPUSHは未確認要素や推測表記を含むため、主判別から外すか参考加点に留めています。</li>
+          </ul>
+        </section>
       </section>
       <section id="install" class="hidden">
         <a class="back" href="#home">← トップへ</a><p class="eyebrow">iPhone</p><h1>ホーム画面に追加</h1>
@@ -69,31 +84,33 @@
       </section>
     </main>
     <script>
-      const ids=["normalGames","atInitialCount","czCount","directAtCount","bonusDirectCount","otomeAttackCount","otomeAttackWinCount","stamp","medalOver","hiddenNagiSpeech","weakSignalCount","strongSignalCount","currentMedals","investmentMedals","recoveryMedals","memo"];
-      const settings=[359.5,350.8,332.5,302.8,281,262.9], cz=[1,1.05,1.12,1.25,1.38,1.55], direct=[.05,.07,.1,.18,.28,.4], bonusDirect=[21206.7,15648.9,13143.5,8143.4,6427.6,5502.7], otomeAttack=[20.3,21.4,23.2,24.7,25.2,25.7];
-      const n=(id)=>Number(document.getElementById(id).value||0), pct=(v)=>Math.round(v*10)/10;
+      const ids=["normalGames","atInitialCount","czCount","directAtCount","bonusDirectCount","otomeAttackCount","otomeAttackWinCount","stamp","medalOver","atEndScreen","hiddenNagiSpeech","harurunaPush","weakSignalCount","strongSignalCount","currentMedals","investmentMedals","recoveryMedals","memo"];
+      const settings=[359.5,350.8,332.5,302.8,281,262.9], bonusDirect=[21206.7,15648.9,13143.5,8143.4,6427.6,5502.7], otomeAttack=[20.3,21.4,23.2,24.7,25.2,25.7];
+      const n=(id)=>Number(document.getElementById(id).value||0), pct=(v)=>Math.round(v*10)/10, clamp=(v,min,max)=>Math.min(Math.max(v,min),max);
+      const poisson=(count,g,den,refDen,w,lim)=>{if(!g||!den||!refDen)return 0;const a=Math.max(g/den,.0001),b=Math.max(g/refDen,.0001);return clamp((count*Math.log(a/b)-(a-b))*w,-lim,lim)};
+      const binom=(wins,trials,rate,refRate,w,lim)=>{if(!trials)return 0;const p=clamp(rate/100,.001,.999),r=clamp(refRate/100,.001,.999),loss=Math.max(trials-wins,0);return clamp((wins*Math.log(p/r)+loss*Math.log((1-p)/(1-r)))*w,-lim,lim)};
       function show(id){["home","machine","install"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));}
       function save(){const d={};ids.forEach(id=>d[id]=document.getElementById(id).value);localStorage.setItem("slot-iphone",JSON.stringify(d));calc();}
-      function restore(){const d=JSON.parse(localStorage.getItem("slot-iphone")||"{}");ids.forEach(id=>{const value=d[id];document.getElementById(id).value=["stamp","medalOver","hiddenNagiSpeech"].includes(id)?(value||"none"):(value??"")});calc();}
+      function restore(){const d=JSON.parse(localStorage.getItem("slot-iphone")||"{}");ids.forEach(id=>{const value=d[id];document.getElementById(id).value=["stamp","medalOver","atEndScreen","hiddenNagiSpeech","harurunaPush"].includes(id)?(value||"none"):(value??"")});calc();}
       function calc(){
-        const g=n("normalGames"), at=n("atInitialCount"), c=n("czCount"), dh=n("directAtCount"), bd=n("bonusDirectCount"), oa=n("otomeAttackCount"), oaw=n("otomeAttackWinCount"), weak=n("weakSignalCount"), strong=n("strongSignalCount"), medals=n("currentMedals"), investment=n("investmentMedals"), recovery=n("recoveryMedals"), stamp=document.getElementById("stamp").value||"none", medalOver=document.getElementById("medalOver").value||"none", hiddenNagi=document.getElementById("hiddenNagiSpeech").value||"none";
-        const hasInput=[g,at,c,dh,bd,oa,oaw,weak,strong,medals,investment,recovery].some(v=>v!==0)||stamp!=="none"||medalOver!=="none"||hiddenNagi!=="none";
+        const g=n("normalGames"), at=n("atInitialCount"), c=n("czCount"), dh=n("directAtCount"), bd=n("bonusDirectCount"), oa=n("otomeAttackCount"), oaw=n("otomeAttackWinCount"), weak=n("weakSignalCount"), strong=n("strongSignalCount"), medals=n("currentMedals"), investment=n("investmentMedals"), recovery=n("recoveryMedals"), stamp=document.getElementById("stamp").value||"none", medalOver=document.getElementById("medalOver").value||"none", atEnd=document.getElementById("atEndScreen").value||"none", hiddenNagi=document.getElementById("hiddenNagiSpeech").value||"none", haruruna=document.getElementById("harurunaPush").value||"none";
+        const hasInput=[g,at,c,dh,bd,oa,oaw,weak,strong,medals,investment,recovery].some(v=>v!==0)||stamp!=="none"||medalOver!=="none"||atEnd!=="none"||hiddenNagi!=="none"||haruruna!=="none";
         if(!hasInput){document.getElementById("result").innerHTML=`<div class="panel"><p class="ey">設定推測結果</p><h2>入力待ち</h2><p class="muted">通常ゲーム数や初当たり回数を入力すると、期待度と判断理由を表示します。</p></div>`;return;}
         const nagiMin={nagi2:2,nagi3:3,nagi4:4,nagi5:5,nagi6:6}[hiddenNagi]||0;
-        let scores=[1,2,3,4,5,6].map((s,i)=>10+(at&&g?Math.max(-3.2,Math.min(5.1,(at/(g/settings[i])-1)*3.2)):0)+(g?Math.max(-1.2,Math.min(2,c/Math.max(g/1000*cz[i],.01)-1))*1.2:0)+(g?Math.max(-2.5,Math.min(4.2,dh/Math.max(g/1000*direct[i],.01)-1))*2.5:0)+(bd&&g?Math.max(-2.8,Math.min(4.5,(bd/(g/bonusDirect[i])-1)*2.8)):0)+(oa?Math.max(-1.26,Math.min(1.62,(3.2-Math.abs((oaw/oa*100)-otomeAttack[i]))*.9)):0)+(nagiMin?(s>=nagiMin?1.4+s*.22:-.8):0)+weak*(.1+i*.12)+strong*(.15+i*.24)+(medals/2000)*((s-3.5)/2.5));
-        const rules={ka:2,kichi:3,ryo:4,yu:5,kiwami:6,over222:2,over333:3,over444:4,over555:5,over666:6};
-        const signalLabels={ka:"スタンプ 可",kichi:"スタンプ 吉",ryo:"スタンプ 良",yu:"スタンプ 優",kiwami:"スタンプ 極",over222:"222枚 OVER",over333:"333枚 OVER",over444:"444枚 OVER",over555:"555枚 OVER",over666:"666枚 OVER"};
-        const selectedSignals=[stamp,medalOver].filter(v=>v&&v!=="none");
+        let scores=[1,2,3,4,5,6].map((s,i)=>10+poisson(at,g,settings[i],settings[0],.8,6)+poisson(bd,g,bonusDirect[i],bonusDirect[0],2.1,6)+binom(oaw,oa,otomeAttack[i],otomeAttack[0],.8,3)+(nagiMin?(s>=nagiMin?1.4+s*.22:-.8):0)+(haruruna==="seen"?(s>=4?2.5+s*.2:-1):0)+weak*(.1+i*.12)+strong*(.15+i*.24)+(medals/2000)*((s-3.5)/2.5));
+        const rules={ka:2,kichi:3,ryo:4,yu:5,kiwami:6,over222:2,over333:3,over444:4,over555:5,over666:6,otomeGroupB:2,fourGirlsTableA:4,otomeGroupAHeavenDenied:4};
+        const signalLabels={ka:"スタンプ 可",kichi:"スタンプ 吉",ryo:"スタンプ 良",yu:"スタンプ 優",kiwami:"スタンプ 極",over222:"222枚 OVER",over333:"333枚 OVER",over444:"444枚 OVER",over555:"555枚 OVER",over666:"666枚 OVER",otomeGroupB:"AT終了画面 乙女集合B",fourGirlsTableA:"AT終了画面 乙女4人＋テーブルA確認",otomeGroupAHeavenDenied:"AT終了画面 乙女集合A＋天国否定"};
+        const selectedSignals=[stamp,medalOver,atEnd].filter(v=>v&&v!=="none");
         const confirmed=selectedSignals.find(v=>["kiwami","over666"].includes(v));
         const min=confirmed?6:Math.max(0,...selectedSignals.map(v=>rules[v]||0));
         if(confirmed) scores=[0,0,0,0,0,100]; else if(min) scores=scores.map((v,i)=>i+1<min?0:v+8+i*.5);
         const total=scores.reduce((a,b)=>a+Math.max(0,b),0)||100, ps=scores.map(v=>pct(Math.max(0,v)/total*100)); ps[5]=pct(ps[5]+(100-ps.reduce((a,b)=>a+b,0)));
         const best=ps.indexOf(Math.max(...ps))+1, over4=pct(ps[3]+ps[4]+ps[5]), over5=pct(ps[4]+ps[5]), ref=g<1000?"低":g<3000?"中":"高";
-        const decision=stamp==="kiwami"||over4>=55?"続行推奨":over4>=35?"様子見":"ヤメ検討";
+        const decision=confirmed||over4>=55?"続行推奨":over4>=35?"様子見":"ヤメ検討";
         const label=selectedSignals.map(v=>signalLabels[v]).filter(Boolean).join(" / ");
-        document.getElementById("result").innerHTML=`<div class="hero"><p><b>設定推測結果</b></p><h2>最有力: 設定${best}</h2><span class="decision">${decision}</span></div>${label?`<div class="signal"><strong>${label}</strong><span>${confirmed?"設定6期待度を100%にしています。":`設定1から${min-1}の期待度を0%にしています。`}</span></div>`:""}<div class="chips"><span class="chip">参考度: ${ref}</span><span class="chip">期待度表示</span></div>${ps.map((p,i)=>`<div class="bar"><div class="bar-top"><span>設定${i+1}</span><b>${p.toFixed(1)}%</b></div><div class="track"><div class="fill ${i>=3?"hot":""}" style="width:${p}%"></div></div></div>`).join("")}<div class="highbox"><h2>高設定期待度</h2><div class="metrics"><div><span>設定4以上</span><strong>${over4.toFixed(1)}%</strong></div><div><span>設定5以上</span><strong>${over5.toFixed(1)}%</strong></div><div><span>設定6</span><strong>${ps[5].toFixed(1)}%</strong></div></div></div><ul class="reasons"><li>${g<1000?"通常ゲーム数が少ないため参考度は低です。":"通常ゲーム数に応じて参考度を判定しています。"}</li>${bd>0&&g>0?`<li>戦国乙女ボーナス直撃は約1/${Math.round(g/bd)}として設定差評価に反映しています。</li>`:""}${hiddenNagi!=="none"?`<li>隠れ凪セリフは解析注記があるため、下位設定を0%にせず参考加点として反映しています。</li>`:""}${oa>0?`<li>乙女アタック当選率は${(oaw/oa*100).toFixed(1)}%として設定差評価に反映しています。カンスケモード中とリールロック2段階由来は除外してください。</li>`:""}<li>初当たり、CZ、直撃、ボーナス直撃、乙女アタック、示唆、差枚を総合評価しています。</li></ul>`;
+        document.getElementById("result").innerHTML=`<div class="hero"><p><b>設定推測結果</b></p><h2>最有力: 設定${best}</h2><span class="decision">${decision}</span></div>${label?`<div class="signal"><strong>${label}</strong><span>${confirmed?"設定6期待度を100%にしています。":`設定1から${min-1}の期待度を0%にしています。`}</span></div>`:""}<div class="chips"><span class="chip">参考度: ${ref}</span><span class="chip">期待度表示</span></div>${ps.map((p,i)=>`<div class="bar"><div class="bar-top"><span>設定${i+1}</span><b>${p.toFixed(1)}%</b></div><div class="track"><div class="fill ${i>=3?"hot":""}" style="width:${p}%"></div></div></div>`).join("")}<div class="highbox"><h2>高設定期待度</h2><div class="metrics"><div><span>設定4以上</span><strong>${over4.toFixed(1)}%</strong></div><div><span>設定5以上</span><strong>${over5.toFixed(1)}%</strong></div><div><span>設定6</span><strong>${ps[5].toFixed(1)}%</strong></div></div></div><ul class="reasons"><li>${g<1000?"通常ゲーム数が少ないため参考度は低です。":"通常ゲーム数に応じて参考度を判定しています。"}</li>${at>0&&g>0?`<li>AT初当たりは約1/${Math.round(g/at)}として、設定1基準の簡易LLRで評価しています。</li>`:""}${bd>0&&g>0?`<li>戦国乙女ボーナス直撃は約1/${Math.round(g/bd)}として、設定1基準の簡易LLRで評価しています。</li>`:""}${c>0?`<li>CZ回数は${c}回入力されていますが、全設定の明確な数値が不足しているため主スコアから外しています。</li>`:""}${dh>0?`<li>AT直撃回数は${dh}回入力されていますが、現時点では主スコアに入れず参考情報として扱っています。</li>`:""}${hiddenNagi!=="none"?`<li>隠れ凪セリフは解析注記があるため、下位設定を0%にせず参考加点として反映しています。</li>`:""}${haruruna==="seen"?`<li>ハルルナPUSHは推測表記のため、設定4以上側への参考加点として反映しています。</li>`:""}${oa>0?`<li>巫女ポイント0pt到達時の乙女アタック当選率は${(oaw/oa*100).toFixed(1)}%として、設定1基準の簡易LLRで評価しています。カンスケ滞在中とリールロック2段階由来は除外してください。</li>`:""}<li>AT初当たり、戦国乙女ボーナス直撃、巫女ポイント0pt到達時の乙女アタック、終了画面、確定/濃厚示唆、差枚を総合評価しています。</li></ul>`;
       }
-      window.addEventListener("hashchange",()=>show(location.hash.replace("#","")||"home")); ids.forEach(id=>document.getElementById(id).addEventListener("input",save)); document.getElementById("reset").onclick=()=>{localStorage.removeItem("slot-iphone");ids.forEach(id=>document.getElementById(id).value=["stamp","medalOver","hiddenNagiSpeech"].includes(id)?"none":"");calc();}; restore(); show(location.hash.replace("#","")||"home");
+      window.addEventListener("hashchange",()=>show(location.hash.replace("#","")||"home"));ids.forEach(id=>document.getElementById(id).addEventListener("input",save));document.getElementById("reset").onclick=()=>{localStorage.removeItem("slot-iphone");ids.forEach(id=>document.getElementById(id).value=["stamp","medalOver","atEndScreen","hiddenNagiSpeech","harurunaPush"].includes(id)?"none":"");calc();};restore();show(location.hash.replace("#","")||"home");
     </script>
   </body>
 </html>
